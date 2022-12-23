@@ -23,11 +23,22 @@ $(call inherit-product, device/samsung/dream2lte/device.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
+
+# CherishOS
+CHERISH_BUILD_TYPE=OFFICIAL
+TARGET_USES_MINI_GAPPS := true
+USE_PIXEL_CHARGING := true
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.cherish.maintainer=MiDoNaSR
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_ENABLE_BLUR := true
+TARGET_INCLUDE_CARRIER_SETTINGS := true
+WITH_GMS := true
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := dream2lte
-PRODUCT_NAME := lineage_dream2lte
+PRODUCT_NAME := cherish_dream2lte
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-G955F
 PRODUCT_MANUFACTURER := samsung
